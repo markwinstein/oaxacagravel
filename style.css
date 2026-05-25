@@ -2,8 +2,6 @@
    Oaxaca Gravel — stylesheet
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap');
-
 /* ----- Reset & base ----- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -22,7 +20,7 @@
 html {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Lora', Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 18px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -66,7 +64,7 @@ img {
 }
 
 .site-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: 700;
   font-size: 1.6rem;
   color: var(--ink);
@@ -75,7 +73,6 @@ img {
   cursor: pointer;
 }
 
-
 .site-nav {
   display: flex;
   gap: 1.5rem;
@@ -83,7 +80,7 @@ img {
 }
 
 .site-nav a {
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -108,7 +105,7 @@ main {
 }
 
 .about-content h1 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -121,7 +118,7 @@ main {
   margin-bottom: 1.2rem;
 }
 
-/* ----- Ride list (home page — populated later) ----- */
+/* ----- Ride list (home page) ----- */
 .ride-list {
   display: flex;
   flex-direction: column;
@@ -142,7 +139,7 @@ main {
 }
 
 .ride-meta {
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -152,7 +149,7 @@ main {
 }
 
 .ride-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: 700;
   font-size: 2rem;
   line-height: 1.25;
@@ -176,7 +173,7 @@ main {
 }
 
 .entry-header h1 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: 700;
   font-size: 2.2rem;
   line-height: 1.2;
@@ -184,7 +181,7 @@ main {
 }
 
 .entry-meta {
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -203,7 +200,7 @@ main {
 }
 
 .entry-text p:first-of-type::first-letter {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 3.2rem;
   font-weight: 700;
   color: var(--accent);
@@ -235,7 +232,7 @@ main {
 
 .back-link {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -253,7 +250,7 @@ main {
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem 0;
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.75rem;
   color: var(--muted);
   text-align: center;

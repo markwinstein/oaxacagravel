@@ -49,5 +49,5 @@ All paths in post files must be root-relative (e.g. `/style.css`, `/about.html`,
 ## Design
 
 - Background: #f7f4ee / Text: #1c1a17 / Accent: #b85c2a / Muted: #8a7f6e / Border: #d9d4c9
-- Fonts: Lora (body, italic), Playfair Display 700 (headings), Inter 400/500 (meta/UI)
+- Fonts: Georgia (body, headings, drop cap), system-ui/sans-serif (meta/UI — nav, dates, footer)
 - All images: aspect-ratio: 16/9; object-fit: cover
