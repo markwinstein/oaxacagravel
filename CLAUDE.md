@@ -29,6 +29,17 @@ Always write changes to the actual files on disk first (index.html, style.css, a
 - That folder is outside git tracking — never commit anything from it
 - Compress photos with ImageMagick: quality 82, max 1400px wide, output as `cover.jpg`
 
+## Post structure
+
+Every post follows this exact order:
+1. Back link (`← All rides`)
+2. Entry header: meta (date · km) then `<h1>`
+3. First paragraph as `<p class="entry-lede">` — italic, no drop cap
+4. Featured image `<img class="photo-full">`
+5. Remaining paragraphs inside `<div class="entry-text">` — normal (non-italic), drop cap on first paragraph only
+
+All paths in post files must be root-relative (e.g. `/style.css`, `/about.html`, `/`) — never relative (`../`).
+
 ## Git
 
 - Never commit preview files, .DS_Store, or original inbox photos
