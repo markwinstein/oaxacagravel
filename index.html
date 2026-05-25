@@ -16,20 +16,38 @@
 
   <header class="site-header">
     <div class="container">
-      <span class="site-title"><a href="/">Oaxaca Gravel</a></span>
+      <span class="site-title"><a href="/" onclick="var m=document.getElementById('mobile-menu');if(m)m.classList.remove('open');">Oaxaca Gravel</a></span>
       <nav class="site-nav">
         <a href="/about.html">
           <span class="lang-es">Acerca de</span>
           <span class="lang-en">About</span>
         </a>
         <div class="lang-toggle">
-          <button class="lang-btn" id="toggle-es" onclick="setLang('es')">ES</button>
+          <button class="lang-btn" data-lang-btn="es" onclick="setLang('es')">ES</button>
           <span class="lang-sep">/</span>
-          <button class="lang-btn" id="toggle-en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" data-lang-btn="en" onclick="setLang('en')">EN</button>
         </div>
       </nav>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="container">
+      <a href="/about.html">
+        <span class="lang-es">Acerca de</span>
+        <span class="lang-en">About</span>
+      </a>
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang-btn="es" onclick="setLang('es')">ES</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang-btn="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
 
   <main>
     <div class="container">
@@ -62,12 +80,15 @@
       function applyLang(l) {
         localStorage.setItem('og-lang', l);
         document.documentElement.setAttribute('data-lang', l);
-        var es = document.getElementById('toggle-es');
-        var en = document.getElementById('toggle-en');
-        if (es) es.classList.toggle('active', l === 'es');
-        if (en) en.classList.toggle('active', l === 'en');
+        document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === l);
+        });
       }
       window.setLang = function(l) { applyLang(l); };
+      window.toggleMenu = function() {
+        var m = document.getElementById('mobile-menu');
+        if (m) m.classList.toggle('open');
+      };
       applyLang(localStorage.getItem('og-lang') || 'es');
     })();
   </script>
