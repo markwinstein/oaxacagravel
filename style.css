@@ -72,6 +72,7 @@ img {
   color: var(--ink);
   letter-spacing: 0.01em;
   line-height: 1.2;
+  cursor: pointer;
 }
 
 
@@ -208,8 +209,8 @@ main {
 }
 
 .photo-full {
-  width: calc(100% + 4rem);
-  margin: 2.5rem -2rem;
+  width: 100%;
+  margin: 2.5rem 0;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }

@@ -22,7 +22,7 @@
       <div class="ride-list">
 
         <div class="ride-card">
-          <a class="card-link" href="posts/tlacolula-loop.html">
+          <a class="card-link" href="posts/tlacolula-loop/">
             <img class="cover" src="posts/tlacolula-loop/cover.jpg" alt="Tlacolula Loop" />
             <div class="ride-meta">25 May 2026 &nbsp;·&nbsp; 68 km</div>
             <h2 class="ride-title">Tlacolula Loop</h2>
@@ -35,8 +35,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">Oaxaca Gravel</div>
+    <div class="container">© <span id="yr"></span> Oaxaca Gravel</div>
   </footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
