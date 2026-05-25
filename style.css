@@ -246,6 +246,40 @@ main {
   color: var(--accent);
 }
 
+/* ----- Language toggle ----- */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lang-btn {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.lang-btn.active {
+  color: var(--ink);
+}
+
+.lang-sep {
+  color: var(--border);
+  font-size: 0.82rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+[data-lang="es"] .lang-en { display: none; }
+[data-lang="en"] .lang-es { display: none; }
+
 /* ----- Footer ----- */
 .site-footer {
   border-top: 1px solid var(--border);

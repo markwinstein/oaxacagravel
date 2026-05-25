@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oaxaca Gravel</title>
+  <meta property="og:title" content="Oaxaca Gravel" />
+  <meta property="og:description" content="Una bitácora de ciclista desde los caminos secundarios al oriente de Oaxaca." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oaxacagravel.com/" />
+  <meta property="og:image" content="https://oaxacagravel.com/posts/tlacolula-loop/cover.jpg" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.setAttribute('data-lang', localStorage.getItem('og-lang') || 'es');</script>
 </head>
 <body>
 
@@ -12,7 +18,15 @@
     <div class="container">
       <span class="site-title"><a href="/">Oaxaca Gravel</a></span>
       <nav class="site-nav">
-        <a href="about.html">About</a>
+        <a href="/about.html">
+          <span class="lang-es">Acerca de</span>
+          <span class="lang-en">About</span>
+        </a>
+        <div class="lang-toggle">
+          <button class="lang-btn" id="toggle-es" onclick="setLang('es')">ES</button>
+          <span class="lang-sep">/</span>
+          <button class="lang-btn" id="toggle-en" onclick="setLang('en')">EN</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -25,8 +39,12 @@
           <a class="card-link" href="posts/tlacolula-loop/">
             <img class="cover" src="posts/tlacolula-loop/cover.jpg" alt="Tlacolula Loop" />
             <div class="ride-meta">25 May 2026 &nbsp;·&nbsp; 68 km</div>
-            <h2 class="ride-title">Tlacolula Loop</h2>
-            <p class="ride-excerpt">Out of the city before seven, while the air still held some of the night's cold. The road east on the 190 is fast and flat but unpleasant — trucks — so I turned off at Santa María del Tule and picked up the dirt from there.</p>
+            <h2 class="ride-title">
+              <span class="lang-es">Vuelta de Tlacolula</span>
+              <span class="lang-en">Tlacolula Loop</span>
+            </h2>
+            <p class="ride-excerpt lang-es">Salí de la ciudad antes de las siete, cuando el aire todavía conservaba el frío de la noche. La carretera 190 hacia el oriente es rápida y plana, pero desagradable por los tráileres, así que me desvié en Santa María del Tule y tomé la terracería desde ahí.</p>
+            <p class="ride-excerpt lang-en">Out of the city before seven, while the air still held some of the night's cold. The road east on the 190 is fast and flat but unpleasant — trucks — so I turned off at Santa María del Tule and picked up the dirt from there.</p>
           </a>
         </div>
 
@@ -37,7 +55,22 @@
   <footer class="site-footer">
     <div class="container">© <span id="yr"></span> Oaxaca Gravel</div>
   </footer>
-  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    (function() {
+      function applyLang(l) {
+        localStorage.setItem('og-lang', l);
+        document.documentElement.setAttribute('data-lang', l);
+        var es = document.getElementById('toggle-es');
+        var en = document.getElementById('toggle-en');
+        if (es) es.classList.toggle('active', l === 'es');
+        if (en) en.classList.toggle('active', l === 'en');
+      }
+      window.setLang = function(l) { applyLang(l); };
+      applyLang(localStorage.getItem('og-lang') || 'es');
+    })();
+  </script>
 
 </body>
 </html>
