@@ -201,7 +201,7 @@ main {
 
 .entry-text p:first-of-type::first-letter {
   font-family: Georgia, serif;
-  font-size: 4 rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--accent);
   float: left;
