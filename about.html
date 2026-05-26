@@ -61,6 +61,8 @@
         <p class="lang-en">Routes climb into the Sierra Juárez and drop through valley floors lined with agave. Most rides start before the heat sets in.</p>
         <p class="lang-es">Este sitio es un registro de esos días en el campo.</p>
         <p class="lang-en">This site is a record of those days out.</p>
+        <p class="lang-es">Contacto: <a id="ml" style="color:var(--accent);"></a></p>
+        <p class="lang-en">Contact: <a id="ml2" style="color:var(--accent);"></a></p>
       </div>
     </div>
   </main>
@@ -85,6 +87,14 @@
         if (m) m.classList.toggle('open');
       };
       applyLang(localStorage.getItem('og-lang') || 'es');
+      (function() {
+        var u = [111,103,64,111,97,120,97,99,97,103,114,97,118,101,108,46,99,111,109];
+        var addr = u.map(function(c){return String.fromCharCode(c);}).join('');
+        ['ml','ml2'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) { el.href = 'mailto:' + addr; el.textContent = addr; }
+        });
+      })();
     })();
   </script>
 
