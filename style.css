@@ -224,6 +224,26 @@ main {
   margin: 2.5rem 0;
 }
 
+figure {
+  margin: 2.5rem 0;
+}
+
+figure .photo-full {
+  margin: 0;
+}
+
+.photo-grid figure {
+  margin: 0;
+}
+
+figcaption {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 0.45rem;
+}
+
 .photo-grid img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -351,6 +371,10 @@ main {
 }
 
 @media (max-width: 600px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
   .site-nav {
     display: none;
   }
